@@ -4,7 +4,7 @@ Contributors: @alvarofranz
 Tags: users
 Requires at least: 5.0
 Tested up to: 6.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,5 +37,8 @@ I created this plugin as a solid base to use in the different websites I work on
 Simply deactivate and delete the plugin.
 
 == Changelog ==
-= 1.0 =
+= 1.0.0 =
 * Plugin released.
+
+= 1.0.1 =
+* Add recaptcha V2 support.

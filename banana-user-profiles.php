@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Banana User Profiles
  * Description: Clean user profile functionality with no bloat.
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      Álvaro Franz
  * Text Domain: banana-user-profiles
  * Domain Path: /translations/
