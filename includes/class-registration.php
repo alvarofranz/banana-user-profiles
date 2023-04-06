@@ -73,6 +73,18 @@ class Registration {
 			return;
 		}
 
+        // Process Google recaptcha V2 only if user_profile_recaptcha_public_key is set
+        if ( get_option( 'user_profile_recaptcha_public_key' ) ) {
+            $recaptcha_secret = get_option( 'user_profile_recaptcha_secret_key' );
+            $recaptcha_response = $_POST['g-recaptcha-response'];
+            $recaptcha = file_get_contents( 'https://www.google.com/recaptcha/api/siteverify?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response );
+            $recaptcha = json_decode( $recaptcha );
+            if ( ! $recaptcha->success ) {
+                wp_cache_set( 'user_profile_registration_error', __( 'Please verify that you are not a robot', 'banana-user-profiles' ) );
+                return;
+            }
+        }
+
 		// Array to store the new user data
 		$data_for_new_user = [];
 

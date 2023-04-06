@@ -128,6 +128,34 @@ function settings_page_sections_and_fields() {
 		'user_profile_options_settings_section'
 	);
 
+    // Add Setting: Recaptcha public key
+    register_setting(
+        'user_profile_settings',
+        'user_profile_recaptcha_public_key'
+    );
+
+    add_settings_field(
+        'user_profile_recaptcha_public_key',
+        __( 'reCaptcha public key', 'banana-user-profiles' ),
+        'banana\user_profiles\display_recaptcha_public_field',
+        'user_profile_settings_page',
+        'user_profile_options_settings_section'
+    );
+
+    // Add Setting: Recaptcha secret key
+    register_setting(
+        'user_profile_settings',
+        'user_profile_recaptcha_secret_key'
+    );
+
+    add_settings_field(
+        'user_profile_recaptcha_secret_key',
+        __( 'reCaptcha secret key', 'banana-user-profiles' ),
+        'banana\user_profiles\display_recaptcha_secret_field',
+        'user_profile_settings_page',
+        'user_profile_options_settings_section'
+    );
+
 }
 
 // This function renders the heading for the Pages section
@@ -189,6 +217,23 @@ function display_disable_activation_email_field() {
     type="checkbox"
     name="user_profile_disable_activation_email"
     value="1" />';
+}
+
+// Render the recaptcha public key field
+function display_recaptcha_public_field() {
+    echo '<input
+    type="text"
+    name="user_profile_recaptcha_public_key"
+    value="' . esc_attr( get_option( 'user_profile_recaptcha_public_key' ) ) . '" />
+    <p>Leave this field empty if you don\'t want to display a reCaptcha on the registration page.</p>';
+}
+
+// Render the recaptcha secret key field
+function display_recaptcha_secret_field() {
+    echo '<input
+    type="text"
+    name="user_profile_recaptcha_secret_key"
+    value="' . esc_attr( get_option( 'user_profile_recaptcha_secret_key' ) ) . '" />';
 }
 
 // Function that displays the settings page in the admin area
