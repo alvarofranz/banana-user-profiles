@@ -11,7 +11,6 @@
 namespace banana\user_profiles;
 
 esc_html_e( 'Please log out from your current account if you want to log into a different one.', 'banana-user-profiles' );
-
 ?>
 
 <!-- Logout link -->

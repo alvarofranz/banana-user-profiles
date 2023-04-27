@@ -9,6 +9,7 @@
  */
 
 namespace banana\user_profiles;
+
 $Registration = new Registration();
 ?>
 

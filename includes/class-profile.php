@@ -64,7 +64,7 @@ class Profile {
 		$sections[] = [
 			'id'            => 'password',
 			'title'         => __( 'Password', 'banana-user-profiles' ),
-            'description'   => __( 'Change your password (leave blank to do nothing)', 'banana-user-profiles' ),
+            'description'   => __( 'Change your password', 'banana-user-profiles' ),
 			'section_class' => 'password-section',
 			'content_class' => 'password-content'
 		];
@@ -409,7 +409,7 @@ class Profile {
 
 					// Check for errors
 					if ( is_wp_error( $user_id ) ) {
-						$messages['update_failed'] = __( 'There was a problem with updating your perfil', 'banana-user-profiles' );
+						$messages['update_failed'] = __( 'There was a problem while updating your profile', 'banana-user-profiles' );
 					}
 
 					// Standard user meta, handle with update_user_meta
